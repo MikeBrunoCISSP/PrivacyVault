@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPasswords = new System.Windows.Forms.TabPage();
             this.dgvPasswords = new System.Windows.Forms.DataGridView();
-            this.tabCards = new System.Windows.Forms.TabPage();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabCards = new System.Windows.Forms.TabPage();
+            this.dgvCards = new System.Windows.Forms.DataGridView();
             this.colCardType = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +47,7 @@
             this.tabPasswords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasswords)).BeginInit();
             this.tabCards.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCards)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -74,14 +73,6 @@
             // 
             // dgvPasswords
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPasswords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPasswords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPasswords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
@@ -92,17 +83,6 @@
             this.dgvPasswords.Name = "dgvPasswords";
             this.dgvPasswords.Size = new System.Drawing.Size(833, 343);
             this.dgvPasswords.TabIndex = 0;
-            // 
-            // tabCards
-            // 
-            this.tabCards.Controls.Add(this.dataGridView1);
-            this.tabCards.Location = new System.Drawing.Point(4, 25);
-            this.tabCards.Name = "tabCards";
-            this.tabCards.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCards.Size = new System.Drawing.Size(846, 356);
-            this.tabCards.TabIndex = 1;
-            this.tabCards.Text = "Credit Cards";
-            this.tabCards.UseVisualStyleBackColor = true;
             // 
             // colName
             // 
@@ -128,27 +108,31 @@
             this.colURL.Name = "colURL";
             this.colURL.Width = 340;
             // 
-            // dataGridView1
+            // tabCards
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tabCards.Controls.Add(this.dgvCards);
+            this.tabCards.Location = new System.Drawing.Point(4, 25);
+            this.tabCards.Name = "tabCards";
+            this.tabCards.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCards.Size = new System.Drawing.Size(846, 356);
+            this.tabCards.TabIndex = 1;
+            this.tabCards.Text = "Payment Cards";
+            this.tabCards.UseVisualStyleBackColor = true;
+            // 
+            // dgvCards
+            // 
+            this.dgvCards.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCards.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCardType,
+            this.Nickname,
             this.colCCN,
             this.colExp,
             this.colCCV,
             this.colWebsite});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(833, 343);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvCards.Location = new System.Drawing.Point(7, 7);
+            this.dgvCards.Name = "dgvCards";
+            this.dgvCards.Size = new System.Drawing.Size(833, 343);
+            this.dgvCards.TabIndex = 1;
             // 
             // colCardType
             // 
@@ -157,6 +141,12 @@
             this.colCardType.Name = "colCardType";
             this.colCardType.ReadOnly = true;
             this.colCardType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Nickname
+            // 
+            this.Nickname.Frozen = true;
+            this.Nickname.HeaderText = "Nickname";
+            this.Nickname.Name = "Nickname";
             // 
             // colCCN
             // 
@@ -198,7 +188,7 @@
             this.tabPasswords.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasswords)).EndInit();
             this.tabCards.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCards)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,8 +203,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn colURL;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCards;
         private System.Windows.Forms.DataGridViewImageColumn colCardType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nickname;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExp;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCV;
